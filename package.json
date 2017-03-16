@@ -1,0 +1,21 @@
+{
+  "name": "slowpoke-front-end",
+  "version": "1.0.0",
+  "scripts": {
+    "prestart": "gulp",
+    "start": "node slowpoke.3011.js"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-cssnano": "*",
+    "gulp-less": "*",
+    "gulp-uglify": "*"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "serve-favicon": "^2.3.2"
+  }
+}
