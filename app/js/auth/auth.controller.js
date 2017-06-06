@@ -47,7 +47,6 @@ function($state, AuthService) {
 			AuthService.saveToken(token);
 			
 			// parse the token into user, and return to profile page
-			
 			var username = AuthService.getUser();
 			
 			if(username){

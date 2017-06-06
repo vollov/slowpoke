@@ -1,0 +1,37 @@
+<h1>Roles</h1>
+
+<div class="menu">
+	<form class="navbar-form navbar-left">
+		<div class="form-group">
+			<input type="text" placeholder="Search By User Name" ng-model="query" class="form-control">
+		</div>
+	</form>
+</div>
+
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>User Name</th>
+			<th>Email</th>
+			<th>Status</th>
+			<th>Delete</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-class-even="'even'" ng-class='{selected: $index==selectedRow}'
+			ng-click="selectRole($index)"
+			ng-repeat="u in users | filter:query | orderBy:'created'">
+			<td>{{$index+1}}</td>
+			<td>{{u.username}}</td>
+			<td><a href="/#/user/view/{{u._id}}">{{u.email}}</a></td>
+			<td>{{u.status}}</td>
+
+			<td><a class="btn btn-primary"
+				ng-click="deleteUser(u, $index)" ng-class="{disabled: index < 0}">delete</a></td>
+			<td><a class="btn btn-primary"
+				href="/#/user/edit/{{u._id}}" ng-class="{disabled: index < 0}">edit</a></td>
+		<tr>
+	</tbody>
+</table>
